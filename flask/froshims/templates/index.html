@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>Register</h1>
+    <form action="/register" method="post">
+        <input type="text" name="name" placeholder="name" autocomplete="off" autofocus>
+
+        <!-- <select> -->
+            <!-- <option disabled selected>Sport</option> -->
+            <!-- {% for sport in sports %} -->
+                <!-- <option>{{ sport }}</option> -->
+            <!-- {% endfor %} -->
+        <!-- </select> -->
+
+        {% for sport in sports %}
+        <input type="checkbox" name="sport" value="{{sport}}" >{{ sport }}
+        {% endfor %}
+
+        <input type="submit" value="Register" />
+    </form>
+
+{% endblock %}
